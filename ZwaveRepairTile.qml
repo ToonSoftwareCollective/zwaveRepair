@@ -26,6 +26,35 @@ Tile {
 		font.family: qfont.bold.name
 		visible: !dimState
 	}
-
 	
+
+	Text {
+		id: timeText
+		text: "laaste backup: " + app.lastBackupTimeString
+		color: dimmableColors.clockTileColor
+		anchors {
+			top: statusText.bottom
+			topMargin: 10
+			left: parent.left
+			leftMargin: isNxt? 5:4
+		}
+		font.pixelSize: isNxt? 20:16
+		font.family: qfont.bold.name
+		visible: !dimState
+	}
+	
+	Text {
+		id: timeText2
+		text: "laaste reparatie: " + app.lastRepairTimeString
+		color: dimmableColors.clockTileColor
+		anchors {
+			top: timeText.bottom
+			topMargin: 10
+			left: parent.left
+			leftMargin: isNxt? 5:4
+		}
+		font.pixelSize: isNxt? 20:16
+		font.family: qfont.bold.name
+		visible: !dimState
+	}
 }
