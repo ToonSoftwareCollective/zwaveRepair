@@ -4,22 +4,14 @@ import qb.base 1.0;
 
 App {
 
-	property bool debugOutput: true
+	property bool debugOutput: false
+	property url 	tileUrl : "ZwaveRepairTile.qml"
+	property url 	thumbnailIcon: "qrc://apps/eMetersSettings/drawables/meteradapter.svg"
+
+	
 	
 	function init() {
-		registry.registerWidget(
-			"tile", 
-			"ZwaveRepairTile.qml", 
-			this, 
-			null, 
-				{thumbLabel: qsTr("zwaveRepair"), 
-				 thumbIcon: "qrc://apps/eMetersSettings/drawables/meteradapter.svg", 
-				 thumbCategory: "general", 
-				 thumbWeight: 30, 
-				 baseTileWeight: 10, 
-				 thumbIconVAlignment: "center"
-				}
-		);
+		registry.registerWidget("tile", tileUrl, this, null, {thumbLabel: qsTr("zwaveRepair"), thumbIcon: thumbnailIcon, thumbCategory: "general", thumbWeight: 30, baseTileWeight: 10, thumbIconVAlignment: "center"});
 	}
 
     Timer {
